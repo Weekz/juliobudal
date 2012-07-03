@@ -1,0 +1,21 @@
+<div class="six columns">
+  <h3>About me?</h3>
+  <p>I'm a developer since 2001, focused in web since 2009, developing both in front-end and back-end sides.</p>
+  <p>My best skills are: Ruby on Rails, Javascript, PHP, Delphi, HTML5/CSS3, Linux.</p>
+  <p>
+    I currently work at <a href="http://www.kimitachi.com.br" target="_blank">Kimitachi</a> and I'm founder/copartner of <a href="http://www.sharpen.com.br" target="_blank">Sharpen</a>.
+  </p>
+</div>
+
+<div class="six columns">
+  <h3>Leave a message</h3>
+  <%= form_tag "/" do %>
+    Name:
+    <%= text_field_tag "name" %>
+    Email:
+    <%= text_field_tag "mail" %>
+    Message:
+    <%= text_area_tag "message" %>
+    <%= submit_tag "Send" %>
+  <% end %>
+</div>

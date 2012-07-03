@@ -1,0 +1,66 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: url(bg.png) repeat;
+  color: #efefef;
+}
+
+strong {
+  color: #ffffff;
+}
+
+h1, h2, h4 {
+  color: #77DFF1;
+  font-weight: bold;
+}
+
+h3 {
+  color: #cd4868;
+}
+
+h5 {
+  color: #ffffff;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+a, a:visited {
+  color: #efefef;
+}
+
+a:hover {
+  color: #77DFF1;
+}
+
+input[type="text"], input[type="text"]:focus, textarea, textarea:focus {
+  background: rgba(255, 255, 255, 0.2);
+  color: #efefef;
+  border: 1px solid #787878;
+  width: 97%;
+}
+
+  @media only screen and (max-width: 959px) {}
+
+  /* Tablet Portrait size to standard 960 (devices and browsers) */
+  @media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+  /* All Mobile Sizes (devices and browser) */
+  @media only screen and (max-width: 767px) {
+    h1 {
+      font-size: 36px;
+    }
+  }
+
+  /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+  @media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+  /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+  @media only screen and (max-width: 479px) {
+      h1 {
+      font-size: 26px;
+    }
+  }
