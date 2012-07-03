@@ -15,7 +15,7 @@ development:
   database: juliobudal_development
   pool: 5
   username: root
-  password: budal33
+  password: 55946900gmm 
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: juliobudal_test
   pool: 5
   username: root
-  password: budal33
+  password: 55946900gm
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -38,5 +38,5 @@ production:
   database: juliobudal_production
   pool: 5
   username: root
-  password: budal33
+  password: 55946900gmm
   socket: /var/run/mysqld/mysqld.sock
