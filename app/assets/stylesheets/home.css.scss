@@ -18,10 +18,6 @@ body {
   color: #efefef;
 }
 
-.container {
-  width: 720px;
-}
-
 strong {
   color: #ffffff;
 }
@@ -80,6 +76,11 @@ input[type="text"], input[type="text"]:focus, textarea, textarea:focus {
   width: 97%;
 }
 
+  @media only screen and (min-width: 959px) {
+    .container {
+      width: 720px;
+    }
+  }
   @media only screen and (max-width: 959px) {}
 
   /* Tablet Portrait size to standard 960 (devices and browsers) */
