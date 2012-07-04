@@ -13,6 +13,7 @@ set :deploy_to, "/home/#{user}/public/#{application}"
 set :scm, :git
 set :repository,  "git@github.com:Weekz/juliobudal.git"
 set :branch, "master"
+set :use_sudo, false
 
 default_run_options[:pty] = true
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -27,10 +28,11 @@ after "deploy:restart", "deploy:cleanup"
 
 after 'deploy:update_code', 'deploy:symlink_db'
 after "deploy:update_code", 'deploy:precompile'
-
-task :after_update_code, :roles => [:web, :db, :app] do
+after "deploy:update_code" do
   run "chmod 755 #{release_path}/public -R" 
 end
+
+set :rails_env, :production
 
 namespace :deploy do
   task :start do ; end
@@ -46,6 +48,6 @@ namespace :deploy do
 
   desc "Precompile the assets"
   task :precompile, :roles => :app do
-    run "cd #{release_path} bundle exec rake assets:precompile"
+    run "cd #{release_path} RAILS_ENV=#{rails_env} bundle exec rake assets:precompile"
   end
 end
