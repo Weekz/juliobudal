@@ -70,6 +70,8 @@ namespace :deploy do
     if !system "git push #{fetch(:repository)} master"
       raise Capistrano::Error, "Failed to push changes to #{fetch(:repository)}"
     end
-
   end
+  
+  before "deploy", "deploy:push"
+  before "deploy:migrations", "deploy:push"
 end
