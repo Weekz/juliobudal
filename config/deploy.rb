@@ -11,7 +11,7 @@ set :keep_releases, 2
 set :application, "juliobudal"
 set :deploy_to, "/home/#{user}/public/#{application}"
 set :scm, :git
-set :repository,  "git@github.com:Weekz/juliobudal.git"
+set :repository, "git@github.com:Weekz/juliobudal.git"
 set :branch, "master"
 set :use_sudo, false
 
