@@ -21,7 +21,7 @@ Juliobudal::Application.configure do
   config.assets.digest = true
 
   # Defaults to nil and saved in location specified by config.assets.prefix
-  config.assets.manifest = '/home/server/public/juliobudal/shared/assets'
+  # config.assets.manifest = '/home/server/public/juliobudal/shared/assets'
 
   # Specifies the header that your server uses for sending files
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache

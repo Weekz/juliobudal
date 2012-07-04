@@ -25,7 +25,7 @@ after "deploy:restart", "deploy:cleanup"
 # If you are using Passenger mod_rails uncomment this:
 
 after 'deploy:update_code', 'deploy:symlink_db'
-after "deploy:finalize_update", "deploy:precompile"
+after "deploy:update_code", 'deploy:precompile'
 
 namespace :deploy do
   task :start do ; end
@@ -39,7 +39,8 @@ namespace :deploy do
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
   end
 
-  task :precompile, :role => :app do  
-    run "cd #{release_path}/ &&  bundle exec rake assets:precompile"  
-  end  
+  desc "Precompile the assets"
+  task :precompile, :roles => :app do
+    run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake assets:precompile"
+  end
 end
