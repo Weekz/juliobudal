@@ -31,7 +31,7 @@ h1, h2, h4 {
 
 h1, h3 {
   text-transform: uppercase;
-  color: #ffffff;// #77dff1;
+  color: #77dff1;
   font-family: LeagueGothicRegular;
   font-weight: lighter;
   text-shadow: 0px 2px 0px #000;
@@ -84,7 +84,11 @@ input[type="text"], input[type="text"]:focus, textarea, textarea:focus {
   @media only screen and (max-width: 959px) {}
 
   /* Tablet Portrait size to standard 960 (devices and browsers) */
-  @media only screen and (min-width: 768px) and (max-width: 959px) {}
+  @media only screen and (min-width: 768px) and (max-width: 959px) {
+  .container {
+      width: 576px;
+    }
+  }
 
   /* All Mobile Sizes (devices and browser) */
   @media only screen and (max-width: 767px) {
