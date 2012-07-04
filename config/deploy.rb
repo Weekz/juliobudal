@@ -7,6 +7,7 @@ load 'deploy/assets'
 server 'juliobudal.com', :web, :db, :app, primary: true
 set :user, "server"
 
+set :keep_releases, 2
 set :application, "juliobudal"
 set :deploy_to, "/home/#{user}/public/#{application}"
 set :scm, :git
@@ -27,6 +28,10 @@ after "deploy:restart", "deploy:cleanup"
 after 'deploy:update_code', 'deploy:symlink_db'
 after "deploy:update_code", 'deploy:precompile'
 
+task :after_update_code, :roles => [:web, :db, :app] do
+  run "chmod 755 #{release_path}/public -R" 
+end
+
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
@@ -41,6 +46,6 @@ namespace :deploy do
 
   desc "Precompile the assets"
   task :precompile, :roles => :app do
-    run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake assets:precompile"
+    run "cd #{release_path} bundle exec rake assets:precompile"
   end
 end
