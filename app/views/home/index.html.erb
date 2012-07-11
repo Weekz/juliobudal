@@ -8,20 +8,14 @@
 </div>
 
 <div class="six columns">
-  <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name %>">
-      <%= msg  %>
-    </div>
-  <% end %>
-
   <h3>Leave a message</h3>
-  <%= form_tag "/home/message", method: "POST" do %>
+  <%= form_for @contact do |f| %>
     Name:
-    <%= text_field_tag "name" %>
+    <%= f.text_field :name %>
     Email:
-    <%= text_field_tag "mail" %>
+    <%= f.text_field :email %>
     Message:
-    <%= text_area_tag "message" %>
-    <%= submit_tag "Send" %>
+    <%= f.text_area :message %>
+    <%= f.submit "Send" %>
   <% end %>
 </div>

@@ -12,5 +12,5 @@
  *= require base
  *= require layout
  *= require skeleton
- *= require_tree .
+ *= require home
  */
