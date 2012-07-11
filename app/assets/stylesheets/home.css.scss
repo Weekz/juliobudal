@@ -56,7 +56,7 @@ a:hover {
 .alert {
   border: 1px solid #ededed;
   padding: 3px;
-  margin-bottom: 15px
+  margin-bottom: 15px;
 }
 
 .alert.alert-notice {
@@ -69,12 +69,40 @@ a:hover {
   color: #CD4868;
 }
 
+textarea { height: 100px; }
+
 input[type="text"], input[type="text"]:focus, textarea, textarea:focus {
   background: rgba(255, 255, 255, 0.2);
   color: #efefef;
   border: 1px solid #787878;
   width: 97%;
 }
+
+.login-box {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.login-box input[type='text'],
+.login-box input[type='email'],
+.login-box input[type='password'] {
+  width: 96%;
+  height: 30px;
+}
+
+.login-box .button {
+  padding: 14px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.login-box label {
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+
+
 
   @media only screen and (min-width: 959px) {
     .container {
@@ -85,7 +113,7 @@ input[type="text"], input[type="text"]:focus, textarea, textarea:focus {
 
   /* Tablet Portrait size to standard 960 (devices and browsers) */
   @media only screen and (min-width: 768px) and (max-width: 959px) {
-  .container {
+    .container {
       width: 576px;
     }
   }
@@ -102,7 +130,11 @@ input[type="text"], input[type="text"]:focus, textarea, textarea:focus {
 
   /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
   @media only screen and (max-width: 479px) {
-      h1 {
+    h1 {
       font-size: 40px;
     }
+
+    h5 {
+      font-size: 14px;
+    }  
   }

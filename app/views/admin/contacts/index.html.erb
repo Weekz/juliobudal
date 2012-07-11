@@ -1,0 +1,23 @@
+<div class="twelve columns">
+
+  <h3>Messages</h3>
+
+  <table width="100%" class="table">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Message</th>
+      <th></th>
+    </tr>
+
+  <% @contacts.each do |contact| %>
+    <tr class="table-row">
+      <td width="20%"><%= contact.name %></td>
+      <td width="20%"><%= contact.email %></td>
+      <td width="45%"><%= contact.message %></td>
+      <td class="actions"><%= link_to 'Destroy', [:admin, contact], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+</div>

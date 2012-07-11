@@ -28,25 +28,45 @@
 </head>
 <body>
 
-
-  <!-- Primary Page Layout
-  ================================================== -->
-
-  <!-- Delete everything in this .container and get started on your own site! -->
-
   <div class="container">
-    <div class="twelve columns">
-      <h1 class="remove-bottom" style="margin-top: 40px">Julio André Budal</h1>
-      <h5>Software Engineer | <a href="http://www.sharpen.com.br">Sharpen</a> Founder </h5>
-      <hr />
-    </div>
-    
+
+    <header class="twelve columns">
+
+      <div class="header-wrapper cf">
+
+        <div class="fl logo">
+          <a href="/">
+            <h1 class="remove-bottom">Julio André Budal</h1>
+          </a>
+          <h5 class="">Software Engineer | <a href="http://www.sharpen.com.br">Sharpen</a> Founder </h5>
+        </div>
+
+        <span class="login-nav fr">
+          <% unless admin_signed_in? %>
+            <%= link_to "Login", new_admin_session_path, class: "btn" %>
+          <% else %>
+            <%= link_to "Logout", destroy_admin_session_path, method: "DELETE", class: "btn" %>
+            <%= link_to "Administration", admin_contacts_path, class: "btn" %>
+          <% end %>
+        </span>
+
+      </div>
+
+    </header>
+
+    <% flash.each do |name, msg| %>
+      <div class="twelve columns">
+        <div class="alert alert-<%= name %>">
+          <%= msg  %>
+        </div>
+      </div>
+    <% end %>
+
     <%= yield %>
 
   </div><!-- container -->
 
+  <%= yield :bottom %>
 
-<!-- End Document
-================================================== -->
 </body>
 </html>

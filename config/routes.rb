@@ -1,6 +1,15 @@
 Juliobudal::Application.routes.draw do
+  
+  namespace :admin do
+    root to: 'contacts#index'
+    resources :contacts, only: [:index, :destroy]
+  end
+
+  devise_for :admins
+
   get "home/index"
-  post "home/message"
+
+  resources :contacts
   
   root to: 'home#index'
 
