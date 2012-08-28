@@ -8,6 +8,7 @@ Juliobudal::Application.routes.draw do
   devise_for :admins
 
   get "home/index"
+  get "namora/comigo"
 
   resources :contacts
   

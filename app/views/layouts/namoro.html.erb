@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maria Eduarda Pereira Peres</title>
+  <meta charset="utf-8">
+  <%= stylesheet_link_tag    "pedido", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container big-message">
+    <%= yield %>
+  </div>
+</body>
+</html>

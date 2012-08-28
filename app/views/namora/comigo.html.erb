@@ -1,0 +1,24 @@
+<div class='content'>
+  <p class='name'>Maria Eduarda Pereira Peres</p>
+    <%= image_tag "pedido.jpg" %>
+  <p class='message'>
+    Você gostaria de <s>casar ainda não</s> namorar comigo?
+    <br />
+    <br />
+    <button id="sim">SIM</button>
+    <button id="nao">NÃO</button>
+  </p>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#sim').live('click', function() {
+      $('.content').html("<%= j render 'sim' %>");
+      document.bgColor = 'black';
+    });
+
+    $('#nao').live('click', function() {
+      alert("opção errada.");
+    });
+  });
+</script>
