@@ -3,7 +3,24 @@
 <head>
   <title>Maria Eduarda Pereira Peres</title>
   <meta charset="utf-8">
-  <%= stylesheet_link_tag    "pedido", :media => "all" %>
+  <style>
+    .big-message {
+      text-align: center;
+      padding: 50px;
+      font-family: sans-serif;
+    }
+
+    .big-message .name {
+      font-weight: bold;
+      color: red;
+      text-transform: uppercase;
+      font-size: 30px;
+    }
+
+    .big-message .message {
+      font-size: 20px;
+    }
+  </style>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
